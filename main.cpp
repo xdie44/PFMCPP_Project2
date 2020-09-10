@@ -61,9 +61,9 @@ void variableDeclarations()
     int nFilter = 2;
     int nParam = 10;
 
-    char oscil = "o";
-    char filter = "f";
-    char param ="p";
+    char oscil = 'o';
+    char filter = 'f';
+    char param = 'p';
 
     float oscilFreq = 500.0f;
     float filterFreq = 2000.0f;
@@ -94,43 +94,102 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+int changeFreq(int nOsc, int oscType =2)
+{
+    ignoreUnused(nOsc, oscType);
 
+    return {};
+}
 /*
  2)
  */
+bool canPlay (int osc, float freq =440.0f, bool active= true)
+{
+    ignoreUnused(osc, freq, active);
 
+    return {};
+
+}
 /*
  3)
  */
+char notePlayed (int nOsc =1, char oscType ='a', float freq =880.0f)
+{
+    ignoreUnused(nOsc, oscType, freq);
 
+    return {};
+
+}
 /*
  4)
  */
+void cloneOsc (int nOsc, double param1, double param2)
+{
 
+    ignoreUnused(nOsc, param1, param2);
+
+}
 /*
  5)
  */
+float note2Freq (int note, bool active=true)
+{
 
+    ignoreUnused(note, active);
+
+    return {};
+
+}
 /*
  6)
  */
+char typeOsc ( int nOsc, bool isActive =true, char type ='a')
+{
 
+    ignoreUnused(nOsc, isActive, type);
+
+    return {};
+
+}
 /*
  7)
  */
+void switchOsc (int osc1, int osc2, bool isTheSame =false)
+{
 
+    ignoreUnused(osc1, osc2, isTheSame);
+
+}
 /*
  8)
  */
+bool isPlaying (char oscWave ='a', int numChannel =2, bool noteOn=false)
+{
 
+    ignoreUnused(oscWave, numChannel, noteOn);
+
+    return {};
+
+}
 /*
  9)
  */
+int key2Note (int keyPressed, float freq, int note, bool isPressed)
+{
 
+    ignoreUnused(keyPressed, freq, note, isPressed);
+
+    return {};
+
+}
 /*
  10)
  */
+void switchOffSynth (bool isPlaying, int nOsc, float releaseTime =0.5f)
+{
+    ignoreUnused(isPlaying, nOsc, releaseTime);
 
+}
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
 
@@ -151,25 +210,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    int dialVal = changeFreq (1,2);
     //2)
-    
+    bool osc1CanPlay = canPlay(1);
     //3)
-    
+    char currentNote = notePlayed(2, 'b', 220.0f);
     //4)
-    
+    cloneOsc(4, 4.4, 2.4);
     //5)
-    
+    auto freq = note2Freq(35);
     //6)
-    
+    char osc1Type = typeOsc(2, true, 'c');
     //7)
-    
+    switchOsc(2, 3, false);
     //8)
-    
+    bool isOsc3Playing = isPlaying('d', 1, true);
     //9)
-    
+    auto note = key2Note(22, 300.0f, 2, true);
     //10)
-    
+    switchOffSynth(true, 2, 0.2f);
+
+    ignoreUnused(dialVal, osc1CanPlay, currentNote, freq, osc1Type, isOsc3Playing, note) ;
     
     ignoreUnused(carRented);
     std::cout << "good to go!" << std::endl;
