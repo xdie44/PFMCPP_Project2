@@ -16,12 +16,12 @@ video: Chapter 2 - Part 3
  
  1) Write down the names of all of the primitives available in C++ (excluding wchar_t) here: 
  
- 
- 
- 
- 
- 
- 
+ int
+ char 
+ float
+ double
+ bool
+ void
  
  
  
@@ -56,10 +56,30 @@ void variableDeclarations()
 {
     //example:
     int number = 2; //declaration of a primitive named 'number' with an initial value of '2'
+
+    int nOscil = 4;
+    int nFilter = 2;
+    int nParam = 10;
+
+    char oscil = "o";
+    char filter = "f";
+    char param ="p";
+
+    float oscilFreq = 500.0f;
+    float filterFreq = 2000.0f;
+    float paramVal = 4.5f;
+
+    double param1 = 4.5;
+    double param2 = 5.5;
+    double param3 = 2.5;
+
+    bool oscilStart = true;
+    bool filterStart = false;
+    bool paramVisible = true;
     
     
     
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, nOscil, nFilter, nParam, oscil, filter, param, oscilFreq, filterFreq, paramVal, param1, param2, param3, oscilStart, filterStart, paramVisible); //passing each variable declared to the ignoreUnused() function
 }
 /*
  10 functions
